@@ -9,16 +9,18 @@
   <packaging>war</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <version.jetty>9.4.8.v20171121</version.jetty>
-    <version.jersey>2.26</version.jersey>
-    <version.eclipselink>2.7.1</version.eclipselink>
     <version.servlet-api>3.1.0</version.servlet-api>
-    <version.cdi-api>1.2</version.cdi-api>
-    <version.persistence-api>2.2</version.persistence-api>
-    <version.ws.rs-api>2.1</version.ws.rs-api>
     <version.jsp-api>2.3.1</version.jsp-api>
     <version.el-api>3.0.0</version.el-api>
     <version.jstl>1.2</version.jstl>
+    <version.ws.rs-api>2.1</version.ws.rs-api>
+    <version.transaction-api>1.2</version.transaction-api>
+    <version.jetty>9.4.8.v20171121</version.jetty>
+    <version.jersey>2.26</version.jersey>
+    <version.eclipselink>2.7.1</version.eclipselink>
+    <version.cdi-api>1.2</version.cdi-api>
+    <version.persistence-api>2.2</version.persistence-api>
+    <version.websocket-api>1.0</version.websocket-api>
     <version.mysql-connector>5.1.6</version.mysql-connector>
     <version.maven-war-plugin>3.2.0</version.maven-war-plugin>
     <version.maven-compiler-plugin>3.7.0</version.maven-compiler-plugin>
@@ -47,6 +49,17 @@
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>${version.jstl}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.transaction</groupId>
+      <artifactId>javax.transaction-api</artifactId>
+      <version>${version.transaction-api}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.websocket</groupId>
+      <artifactId>javax.websocket-api</artifactId>
+      <version>${version.websocket-api}</version>
       <scope>provided</scope>
     </dependency>
     <!-- END: Provided by Jetty 9 -->
