@@ -16,11 +16,15 @@
     <version.cdi-api>1.2</version.cdi-api>
     <version.persistence-api>2.2</version.persistence-api>
     <version.ws.rs-api>2.1</version.ws.rs-api>
+    <version.jsp-api>2.3.1</version.jsp-api>
+    <version.el-api>3.0.0</version.el-api>
+    <version.jstl>1.2</version.jstl>
     <version.mysql-connector>5.1.6</version.mysql-connector>
     <version.maven-war-plugin>3.2.0</version.maven-war-plugin>
     <version.maven-compiler-plugin>3.7.0</version.maven-compiler-plugin>
   </properties>
   <dependencies>
+    <!-- BEGIN: Provided by Jetty 9.4 -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -28,16 +32,35 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>${version.jsp-api}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.el</groupId>
+      <artifactId>javax.el-api</artifactId>
+      <version>${version.el-api}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>${version.jstl}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- END: Provided by Jetty 9 -->
+    <dependency>
       <groupId>javax.enterprise</groupId>
       <artifactId>cdi-api</artifactId>
       <version>${version.cdi-api}</version>
-      <scope>provided</scope>
       <exclusions>
         <exclusion>
           <groupId>javax.el</groupId>
           <artifactId>javax.el-api</artifactId>
         </exclusion>
       </exclusions>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>javax.persistence</groupId>
