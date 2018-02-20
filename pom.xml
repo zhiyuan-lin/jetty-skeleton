@@ -62,7 +62,8 @@
       <version>${version.websocket-api}</version>
       <scope>provided</scope>
     </dependency>
-    <!-- END: Provided by Jetty 9 -->
+    <!-- END: Provided by Jetty 9.4 -->
+    <!-- BEGIN: Provided by Jetty 9.4, needs CDI module to be enabled -->
     <dependency>
       <groupId>javax.enterprise</groupId>
       <artifactId>cdi-api</artifactId>
@@ -75,6 +76,8 @@
       </exclusions>
       <scope>provided</scope>
     </dependency>
+    <!-- END: Provided by Jetty 9.4, needs CDI module to be enabled -->
+    <!-- BEGIN: JPA is provided by EclipseLink -->
     <dependency>
       <groupId>javax.persistence</groupId>
       <artifactId>javax.persistence-api</artifactId>
@@ -88,11 +91,13 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
+      <!-- Use MySQL by default, you can use any supported DB of EL -->
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>${version.mysql-connector}</version>
       <scope>runtime</scope>
     </dependency>
+    <!-- END: JPA is provided by EclipseLink -->
     <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
       <artifactId>jersey-container-servlet</artifactId>
